@@ -132,7 +132,7 @@ int set_socket_nonblocking(int sockfd) {
 void *client_thread_func(void *arg) {
     client_thread_data_t *data = (client_thread_data_t *)arg;
     struct epoll_event event, events[MAX_EVENTS];
-    char payload[PAYLOAD_SIZE] = "ABCDEF"; /* 6-byte payload (adjusted for header size) */
+    char payload[PAYLOAD_SIZE] = "ABCD";
     packet_t send_pkt, recv_pkt;
     struct timeval start, end;
     socklen_t addr_len = sizeof(data->server_addr);
